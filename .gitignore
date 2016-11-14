@@ -1,0 +1,15 @@
+# Ignore binaries.
+/bin
+
+# Ignore non-custom parts of Drupal.
+/html/core
+/html/libraries
+/html/modules/custom/wxt_library
+/html/modules/contrib
+/html/profiles/wxt
+/html/themes/custom/wxt_bootstrap
+/html/themes/contrib
+/html/sites/default/files
+
+# Ignore Composer-managed dependencies.
+vendor/
