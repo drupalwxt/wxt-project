@@ -127,7 +127,7 @@
                 "source"  : {
                     "url"       : "https://github.com/wet-boew/themes-cdn.git",
                     "type"      : "git",
-                    "reference" : "v4.0.22-theme-gcweb"
+                    "reference" : "v4.0.22-gcweb"
                 }
             }
         },
