@@ -1,15 +1,48 @@
-# Ignore binaries.
-/bin
-
 # Ignore non-custom parts of Drupal.
-/html/core
-/html/libraries
-/html/modules/custom/wxt_library
-/html/modules/contrib
-/html/profiles/wxt
-/html/themes/custom/wxt_bootstrap
-/html/themes/contrib
-/html/sites/default/files
+components
+html/core
+html/libraries
+html/modules/custom/wxt_library
+html/modules/contrib
+html/profiles/wxt
+html/themes/custom/wxt_bootstrap
+html/themes/contrib
+html/sites/default/files
 
-# Ignore Composer-managed dependencies.
+# Ignore Development Files
+compass_app_log.txt
+*.DS_Store
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*.sass-cache
+
+# Composer files
+composer.lock
+html
 vendor/
+*/*/*/vendor
+*/*/vendor
+
+# Node
+node_modules/
+bower_components/
+
+# PhpStorm
+.idea
+
+# SASS
+.sass-cache
+*.sass-cache*
+**/sass/*.css
+
+# WxT
+test-results
+scripts/local
+scripts/wxt
+files_private/
