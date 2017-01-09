@@ -1,13 +1,15 @@
-# Ignore non-custom parts of Drupal.
-components
-html/core
-html/libraries
-html/modules/custom/wxt_library
-html/modules/contrib
-html/profiles/wxt
-html/themes/custom/wxt_bootstrap
-html/themes/contrib
-html/sites/default/files
+# WxT
+test-results
+scripts/local
+scripts/wxt
+files_private/
+
+# Composer files
+composer.lock
+html
+vendor
+*/*/*/vendor
+*/*/vendor
 
 # Ignore Development Files
 compass_app_log.txt
@@ -22,13 +24,6 @@ compass_app_log.txt
 *.vi
 *.sass-cache
 
-# Composer files
-composer.lock
-html
-vendor/
-*/*/*/vendor
-*/*/vendor
-
 # Node
 node_modules/
 bower_components/
@@ -40,9 +35,3 @@ bower_components/
 .sass-cache
 *.sass-cache*
 **/sass/*.css
-
-# WxT
-test-results
-scripts/local
-scripts/wxt
-files_private/

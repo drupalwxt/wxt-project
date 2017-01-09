@@ -24,13 +24,13 @@
         "sebastian/phpcpd": "*",
         "phpunit/phpunit": "4.8",
         "deployer/deployer": "^4.0",
-        "deployer/recipes": "^4.0",
-        "drush/drush": "8.*@stable"
+        "deployer/recipes": "^4.0"
     },
     "require": {
         "composer/installers": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "^1.6.0",
+        "drush/drush": "8.*@stable",
         "drupalwxt/wxt": "dev-8.x-2.x",
         "drupalwxt/wxt-scripts": "dev-master"
     },
