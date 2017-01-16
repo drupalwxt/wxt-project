@@ -1,5 +1,7 @@
-Composer Project Template for Drupal WxT
-========================================
+Composer Project Template for Drupal
+====================================
+
+[![Build Status][ci-badge]][ci]
 
 Drupal WxT codebase for `<site-name>`.
 
@@ -7,14 +9,6 @@ Drupal WxT codebase for `<site-name>`.
 
 * [Composer][composer]
 * [Node][node]
-
-## Installation
-
-Initialize a new project with this command:
-
-```
-$ composer create-project drupalwxt/wxt-project:8.x-dev PROJECT_NAME --no-interaction
-```
 
 ## Maintenance
 
@@ -29,5 +23,7 @@ List of common commands are as follows:
 | Updating Drupal Core exclusively                | ```composer update drupal/core```                      |
 
 
-[composer]:               https://getcomposer.org
-[node]:                   https://nodejs.org
+[ci]:                   https://travis-ci.org/drupalwxt/site-wxt
+[ci-badge]:             https://travis-ci.org/drupalwxt/site-wxt.svg?branch=master
+[composer]:             https://getcomposer.org
+[node]:                 https://nodejs.org
