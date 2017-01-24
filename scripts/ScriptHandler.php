@@ -1,19 +1,16 @@
 <?php
 
-/**
- * @file
- * Contains \DrupalWxT\WxT\ScriptHandler.
- */
-
 namespace DrupalWxT\WxT;
 
+use Composer\Package\RootPackage;
+use Composer\Factory;
 use Composer\Script\Event;
-use Composer\Util\ProcessExecutor;
 use Composer\Semver\Comparator;
+use Composer\Util\ProcessExecutor;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 
 class ScriptHandler {
-
 
   /**
    * Retrieves the Drupal root directory.
@@ -40,29 +37,29 @@ class ScriptHandler {
       'themes',
     ];
 
-    // Required for unit testing
+    // Required for unit testing.
     foreach ($dirs as $dir) {
-      if (!$fs->exists($root . '/'. $dir)) {
-        $fs->mkdir($root . '/'. $dir);
-        $fs->touch($root . '/'. $dir . '/.gitkeep');
+      if (!$fs->exists($root . '/' . $dir)) {
+        $fs->mkdir($root . '/' . $dir);
+        $fs->touch($root . '/' . $dir . '/.gitkeep');
       }
     }
 
-    // Prepare the settings file for installation
+    // Prepare the settings file for installation.
     if (!$fs->exists($root . '/sites/default/settings.php') and $fs->exists($root . '/sites/default/default.settings.php')) {
       $fs->copy($root . '/sites/default/default.settings.php', $root . '/sites/default/settings.php');
       $fs->chmod($root . '/sites/default/settings.php', 0666);
       $event->getIO()->write("Create a sites/default/settings.php file with chmod 0666");
     }
 
-    // Prepare the services file for installation
+    // Prepare the services file for installation.
     if (!$fs->exists($root . '/sites/default/services.yml') and $fs->exists($root . '/sites/default/default.services.yml')) {
       $fs->copy($root . '/sites/default/default.services.yml', $root . '/sites/default/services.yml');
       $fs->chmod($root . '/sites/default/services.yml', 0666);
       $event->getIO()->write("Create a sites/default/services.yml file with chmod 0666");
     }
 
-    // Create the files directory with chmod 0777
+    // Create the files directory with chmod 0777.
     if (!$fs->exists($root . '/sites/default/files')) {
       $oldmask = umask(0);
       $fs->mkdir($root . '/sites/default/files', 0777);
@@ -132,6 +129,36 @@ class ScriptHandler {
         $executor->execute('npm run deploy-libraries', $output, $wxt);
       }
     }
+  }
+
+  /**
+   * Post create project script.
+   *
+   * @param \Composer\Script\Event $event
+   *   The script event.
+   */
+  public static function postCreateProject(Event $event) {
+    $composer = $event->getComposer();
+    $composerFile = Factory::getComposerFile();
+    $io = $event->getIO();
+    $name = $composer->getPackage()->getName();
+
+    $projDir = realpath(dirname($composerFile));
+    $projectName = $io->ask('Enter composer project name (drupalwxt/site-wxt): ', 'drupalwxt/site-wxt');
+
+    $finder = new Finder();
+    foreach ($finder->files()->name('/composer\.(json|lock)/i')->in($projDir) as $file) {
+      if (!empty($projectName)) {
+        $file_contents = str_replace("$name", $projectName, $file->getContents());
+        file_put_contents($file->getRealPath(), $file_contents);
+        // reset the project name via reflection.
+        $package = $composer->getPackage();
+        $refl = new \ReflectionProperty(get_class($package), 'name');
+        $refl->setAccessible(true);
+        $refl->setValue($package, $projectName);
+      }
+    }
+
   }
 
 }

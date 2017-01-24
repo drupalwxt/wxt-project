@@ -1,5 +1,5 @@
 {
-    "name": "drupalwxt/wxt-project",
+    "name": "drupalwxt/site-wxt",
     "description": "Project template for Drupal 8 sites built with the WxT distribution.",
     "type": "project",
     "license": "GPL-2.0+",
@@ -32,7 +32,7 @@
         "cweagans/composer-patches": "^1.6.0",
         "drush/drush": "8.*@stable",
         "drupalwxt/wxt": "dev-8.x-2.x",
-        "drupalwxt/drupal-scripts": "dev-master"
+        "drupalwxt/drupal-scaffold-docker": "dev-master"
     },
     "repositories": [
         {
@@ -161,6 +161,10 @@
     ],
     "scripts": {
       "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+      "drupal-scaffold-docker": "DrupalComposer\\DrupalScaffoldDocker\\Plugin::scaffold",
+      "post-root-package-install": [
+          "DrupalWxT\\WxT\\ScriptHandler::postCreateProject"
+      ],
       "pre-install-cmd": [
           "DrupalWxT\\WxT\\ScriptHandler::checkComposerVersion"
       ],
@@ -169,10 +173,12 @@
       ],
       "post-install-cmd": [
           "@composer drupal-scaffold",
+          "@composer drupal-scaffold-docker",
           "DrupalWxT\\WxT\\ScriptHandler::deployLibraries"
       ],
       "post-update-cmd": [
           "@composer drupal-scaffold",
+          "@composer drupal-scaffold-docker",
           "DrupalWxT\\WxT\\ScriptHandler::deployLibraries"
       ]
     },
@@ -210,9 +216,6 @@
             ],
             "html/themes/contrib/{$name}": [
                 "type:drupal-theme"
-            ],
-            "scripts/{$name}": [
-                "drupalwxt/drupal-scripts"
             ],
             "drush/contrib/{$name}": [
                 "type:drupal-drush"

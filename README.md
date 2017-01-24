@@ -1,4 +1,4 @@
-Composer Project Template for Drupal
+Composer Project template for Drupal
 ====================================
 
 [![Build Status][ci-badge]][ci]
@@ -9,6 +9,20 @@ Drupal WxT codebase for `<site-name>`.
 
 * [Composer][composer]
 * [Node][node]
+
+## New Project
+
+```sh
+composer create-project drupalwxt/wxt-project:8.x-dev site-name
+```
+
+## Docker support via `drupal-scaffold-docker`
+
+This project makes use of the `drupal-scaffold-docker` plugin for automatically
+downloading and instantiating a Docker based Drupal infrastructure.
+
+- [README.md][docker-scaffold-readme]
+- [template/docker/README.md][docker-readme]
 
 ## Maintenance
 
@@ -23,7 +37,9 @@ List of common commands are as follows:
 | Updating Drupal Core exclusively                | ```composer update drupal/core```                      |
 
 
-[ci]:                   https://travis-ci.org/drupalwxt/site-wxt
-[ci-badge]:             https://travis-ci.org/drupalwxt/site-wxt.svg?branch=master
-[composer]:             https://getcomposer.org
-[node]:                 https://nodejs.org
+[ci]:                       https://travis-ci.org/drupalwxt/site-wxt
+[ci-badge]:                 https://travis-ci.org/drupalwxt/site-wxt.svg?branch=8.x
+[composer]:                 https://getcomposer.org
+[node]:                     https://nodejs.org
+[docker-scaffold-readme]:   https://github.com/drupalwxt/drupal-scaffold-docker/blob/master/README.md
+[docker-readme]:            https://github.com/drupalwxt/drupal-scaffold-docker/blob/master/template/docker/README.md
