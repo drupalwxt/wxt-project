@@ -41,5 +41,5 @@ List of common commands are as follows:
 [ci-badge]:                 https://travis-ci.org/drupalwxt/site-wxt.svg?branch=8.x
 [composer]:                 https://getcomposer.org
 [node]:                     https://nodejs.org
-[docker-scaffold-readme]:   https://github.com/drupalwxt/drupal-scaffold-docker/blob/master/README.md
-[docker-readme]:            https://github.com/drupalwxt/drupal-scaffold-docker/blob/master/template/docker/README.md
+[docker-scaffold-readme]:   https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/8.x/README.md
+[docker-readme]:            https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/8.x/template/docker/README.md
