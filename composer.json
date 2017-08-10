@@ -39,8 +39,21 @@
             "url": "https://packages.drupal.org/8"
         },
         {
-          "type": "vcs",
-          "url": "http://github.com/heshanlk/webform_migrate.git"
+            "type"    : "package",
+            "package" : {
+                "name"    : "w8tcha/ckeditor-codemirror",
+                "version" : "v1.16",
+                "type"    : "drupal-library",
+                "dist"    : {
+                    "url"  : "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/archive/1.16.tar.gz",
+                    "type" : "tar"
+                },
+                "source"  : {
+                    "url"       : "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin.git",
+                    "type"      : "git",
+                    "reference" : "1.16"
+                }
+            }
         },
         {
             "type"    : "package",
