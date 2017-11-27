@@ -9,15 +9,15 @@
         "jcalderonzumba/gastonjs": "~1.0.2",
         "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
         "mikey179/vfsStream": "~1.2",
-        "symfony/css-selector": "2.8",
+        "symfony/css-selector": "~2.8|~3.0",
         "behat/behat": "^3.0",
         "behat/mink": "~1.7",
         "behat/mink-extension": "*",
         "behat/mink-goutte-driver": "*",
         "behat/mink-selenium2-driver": "*",
         "composer/composer": "^1.4",
-        "drupal/console": "~1.0",
-        "drupal/drupal-extension": "~3.2.0",
+        "drupal/console": "1.0.1",
+        "drupal/drupal-extension": "~3.3.0",
         "squizlabs/php_codesniffer": "2.*",
         "drupal/coder": "~8.2.0",
         "phpmd/phpmd": "@stable",
@@ -32,6 +32,9 @@
         "prestissimo": {
             "maxConnections": 10,
             "minConnections": 5
+        },
+        "platform": {
+            "php": "5.6"
         }
     },
     "repositories": [
@@ -266,8 +269,8 @@
         "cweagans/composer-patches": "^1.6.0",
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "drush/drush": "8.1.12",
-        "drupalwxt/wxt": "dev-8.x-2.x",
+        "drush/drush": "~8.0|^9.0.0-beta7",
+        "drupalwxt/wxt": "2.0.0-rc2",
         "drupal-composer-ext/drupal-scaffold-docker": "8.x-dev"
     },
     "autoload": {
