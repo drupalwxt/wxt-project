@@ -267,7 +267,7 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drush/drush": "~8.0|^9.0.0-beta7",
-        "drupalwxt/wxt": "2.0.0-rc5",
+        "drupalwxt/wxt": "2.0.0-rc6",
         "drupal-composer-ext/drupal-scaffold-docker": "8.x-dev"
     },
     "autoload": {
