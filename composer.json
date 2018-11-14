@@ -265,7 +265,7 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drush/drush": "^9.0",
-        "drupalwxt/wxt": "2.1.8"
+        "drupalwxt/wxt": "2.2.1"
     },
     "autoload": {
         "classmap": [
