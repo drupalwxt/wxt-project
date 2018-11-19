@@ -200,6 +200,7 @@
     ],
     "scripts": {
       "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+      "drupal-scaffold-docker": "DrupalComposer\\DrupalScaffoldDocker\\Plugin::scaffold",
       "post-root-package-install": [
           "DrupalWxT\\WxT\\ScriptHandler::postCreateProject"
       ],
@@ -211,10 +212,12 @@
       ],
       "post-install-cmd": [
           "@composer drupal-scaffold",
+          "@composer drupal-scaffold-docker",
           "DrupalWxT\\WxT\\ScriptHandler::deployLibraries"
       ],
       "post-update-cmd": [
           "@composer drupal-scaffold",
+          "@composer drupal-scaffold-docker",
           "DrupalWxT\\WxT\\ScriptHandler::deployLibraries"
       ]
     },
@@ -265,7 +268,8 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drush/drush": "^9.0",
-        "drupalwxt/wxt": "2.2.1"
+        "drupalwxt/wxt": "2.2.1",
+        "drupal-composer-ext/drupal-scaffold-docker": "8.x-dev"
     },
     "autoload": {
         "classmap": [
