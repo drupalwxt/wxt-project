@@ -16,7 +16,7 @@
         "behat/mink-goutte-driver": "*",
         "behat/mink-selenium2-driver": "*",
         "composer/composer": "^1.4",
-        "drupal/console": "1.0.1",
+        "drupal/console": "~1.8.0",
         "drupal/drupal-extension": "~3.4.0",
         "squizlabs/php_codesniffer": "2.*",
         "drupal/coder": "~8.2.0",
@@ -81,7 +81,8 @@
             "html/libraries/{$name}" : [
                 "type:drupal-library",
                 "type:bower-asset",
-                "type:npm-asset"
+                "type:npm-asset",
+                "type:drupal-console-library"
             ],
             "html/modules/custom/{$name}": [
                 "drupal/wxt_library"
