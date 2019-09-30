@@ -109,6 +109,16 @@
                 "Enter deployer/recipes patch #80 description here":
                 "https://patch-diff.githubusercontent.com/raw/deployphp/recipes/pull/80.patch"
             }
+        },
+         "patches-ignore": {
+            "drupal/lightning_core": {
+              "drupal/core": {
+                "1356276 - Allow profiles to define a base/parent profile and load them in the correct order":
+                "https://www.drupal.org/files/issues/2018-10-12/1356276-531.patch",
+                "2914389 - Allow profiles to exclude dependencies of their parent":
+                "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch"
+              }
+            }
         }
     },
     "require": {
@@ -118,7 +128,8 @@
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drush/drush": "^9.0",
         "drupalwxt/wxt": "3.0.0-rc1",
-        "drupal/panelizer": "dev-5.x#5e671cb5 as 4.2"
+        "drupal/panelizer": "dev-5.x#5e671cb5 as 4.2",
+        "acquia/lightning": "4.0.4"
     },
     "autoload": {
         "classmap": [
