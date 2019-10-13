@@ -127,7 +127,7 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drush/drush": "^9.0",
-        "drupalwxt/wxt": "3.0.0-rc1",
+        "drupalwxt/wxt": "3.0.0-rc2",
         "drupal/panelizer": "dev-5.x#5e671cb5 as 4.2",
         "acquia/lightning": "4.0.4"
     },
