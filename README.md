@@ -10,7 +10,13 @@ Drupal WxT codebase for `<site-name>`.
 * [Composer][composer]
 * [Node][node]
 
-## New Project
+## New Project (stable tag)
+
+```sh
+composer create-project drupalwxt/wxt-project:3.0.2 site-name
+```
+
+## New Project (dev)
 
 ```sh
 composer create-project drupalwxt/wxt-project:8.x-dev site-name
