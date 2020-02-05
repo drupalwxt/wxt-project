@@ -48,7 +48,6 @@
         }
     ],
     "scripts": {
-      "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
       "post-root-package-install": [
           "DrupalWxT\\WxT\\ScriptHandler::postCreateProject"
       ],
@@ -59,11 +58,9 @@
           "DrupalWxT\\WxT\\ScriptHandler::checkComposerVersion"
       ],
       "post-install-cmd": [
-          "@composer drupal-scaffold",
           "DrupalWxT\\WxT\\ScriptHandler::deployLibraries"
       ],
       "post-update-cmd": [
-          "@composer drupal-scaffold",
           "DrupalWxT\\WxT\\ScriptHandler::deployLibraries"
       ]
     },
@@ -101,6 +98,12 @@
                 "type:drupal-drush"
             ]
         },
+        "composer-exit-on-patch-failure": true,
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "html/"
+            }
+        },
         "enable-patching": true,
         "patches": {
             "deployer/recipes": {
@@ -123,10 +126,9 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.7",
         "oomphinc/composer-installers-extender": "^1.1",
-        "drupal-composer/drupal-scaffold": "^2.0.0",
+        "drupal/core-composer-scaffold": "*",
         "drush/drush": "^9.0",
-        "drupalwxt/wxt": "3.0.6",
-        "acquia/lightning": "4.1.1"
+        "drupalwxt/wxt": "3.0.7"
     },
     "autoload": {
         "classmap": [
