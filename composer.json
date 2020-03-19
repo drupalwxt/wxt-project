@@ -101,6 +101,14 @@
         },
         "patches": { },
         "patches-ignore": {
+            "acquia/lightning": {
+                "drupal/core": {
+                    "1356276 - Allow profiles to define a base/parent profile and load them in the correct order":
+                    "https://www.drupal.org/files/issues/2019-11-05/1356276-531-8.8.x-4.patch",
+                    "2914389 - Allow profiles to exclude dependencies of their parent":
+                    "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch"
+                }
+            },
             "drupal/lightning_core": {
                 "drupal/core": {
                     "1356276 - Allow profiles to define a base/parent profile and load them in the correct order":
@@ -117,7 +125,7 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal/core-composer-scaffold": "*",
         "drush/drush": "^9.0",
-        "drupalwxt/wxt": "3.0.7"
+        "drupalwxt/wxt": "dev-8.x-3.x"
     },
     "autoload": {
         "classmap": [

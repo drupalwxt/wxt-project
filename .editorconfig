@@ -1,25 +1,17 @@
-# EditorConfig is awesome: http://EditorConfig.org
+# Drupal editor configuration normalization
+# @see http://editorconfig.org/
 
-# top-most EditorConfig file
+# This is the top-most .editorconfig file; do not search in parent directories.
 root = true
 
-# Unix-style newlines with a newline ending every file
+# All files.
 [*]
-end_of_line = lf
-insert_final_newline = true
+end_of_line = LF
+indent_style = space
+indent_size = 2
 charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
 
-[{Dockerfile,*.json,*.sh}]
-indent_style = space
-indent_size = 2
-
-[*.md]
-indent_style = space
+[composer.{json,lock}]
 indent_size = 4
-
-[{composer.json,composer.lock}]
-indent_size = 4
-
-[Makefile]
-indent_style = tab
-indent_size = 2
