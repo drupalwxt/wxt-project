@@ -1,0 +1,25 @@
+name: tag
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Export github reference var
+      run: echo "::set-env name=GITHUB_REFERENCE::$(echo ${GITHUB_REF#refs/tags/})"
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.GITHUB_REFERENCE }}
+        release_name: ${{ env.GITHUB_REFERENCE }}
+        draft: false
+        prerelease: false
