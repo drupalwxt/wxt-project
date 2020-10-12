@@ -34,6 +34,11 @@ List of common commands are as follows:
 | Updating a single contributed project           | ```composer update drupal/PROJECT_NAME```              |
 | Updating Drupal Core exclusively                | ```composer update drupal/core```                      |
 
+## Acknowledgements
+
+Extended with code and lessons learned by the [Acquia Team](https://acquia.com) over at [Lightning](https://github.com/acquia/lightning) and [BLT](https://github.com/acquia/blt).
+
+<!-- Links Referenced -->
 
 [ci]:                       https://travis-ci.org/drupalwxt/site-wxt
 [ci-badge]:                 https://travis-ci.org/drupalwxt/site-wxt.svg?branch=8.x
