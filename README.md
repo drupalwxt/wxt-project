@@ -22,6 +22,45 @@ composer create-project drupalwxt/wxt-project:3.0.14 site-name
 composer create-project drupalwxt/wxt-project:8.x-dev site-name
 ```
 
+## Containers (Optional)
+
+For the (optional) container based development workflow this is roughly the steps that are followed.
+
+> Note: The [docker-scaffold][docker-scaffold] has now been moved to its own repository. Should you wish to use the docker workflow you simply need to run the following command in the site-wxt repository's working directory.
+
+```sh
+# Git clone docker scaffold
+git clone https://github.com/drupalwxt/docker-scaffold.git docker
+
+# Create symlinks
+ln -s docker/docker-compose.yml docker-compose.yml
+ln -s docker/docker-compose-ci.yml docker-compose-ci.yml
+
+# Composer install
+export COMPOSER_MEMORY_LIMIT=-1 && composer install
+
+# Make our base docker image
+make build
+
+# Bring up the dev stack
+docker-compose -f docker-compose.yml up -d
+
+# Install Drupal
+make drupal_install
+
+# Development configuration
+./docker/bin/drush config-set system.performance js.preprocess 0 -y && \
+./docker/bin/drush config-set system.performance css.preprocess 0 -y && \
+./docker/bin/drush php-eval 'node_access_rebuild();' && \
+./docker/bin/drush config-set wxt_library.settings wxt.theme theme-gcweb -y && \
+./docker/bin/drush cr
+
+# Migrate default content
+./docker/bin/drush migrate:import --group wxt --tag 'Core' && \
+./docker/bin/drush migrate:import --group gcweb --tag 'Core' && \
+./docker/bin/drush migrate:import --group gcweb --tag 'Menu'
+```
+
 ## Maintenance
 
 List of common commands are as follows:
