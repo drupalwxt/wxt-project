@@ -5,26 +5,19 @@
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "require": {
+        "cweagans/composer-patches": "^1.6.0",
+        "drupal/core-composer-scaffold": "*",
+        "drupalwxt/wxt": "3.0.15",
+        "drush/drush": "^9.0",
+        "oomphinc/composer-installers-extender": "^1.1 || ^2"
+    },
     "require-dev": {
-        "behat/behat": "^3.0",
-        "behat/mink": "~1.7",
-        "behat/mink-extension": "*",
-        "behat/mink-goutte-driver": "*",
-        "behat/mink-selenium2-driver": "*",
-        "composer/composer": "^1.4",
-        "drupal/coder": "^8.3.7",
+        "drupal/core-dev": "^8.8",
         "drupal/console": "~1.9.0",
+        "drupal/console-extend-plugin": "dev-master as 0.9.4",
         "drupal/drupal-extension": "~3.4.0",
-        "jcalderonzumba/gastonjs": "~1.0.2",
-        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-        "mikey179/vfsstream": "~1.2",
-        "pdepend/pdepend": "2.1.0",
-        "phpmd/phpmd": "@stable",
-        "phpunit/phpunit": "^4.8.35 || ^6.1",
-        "sebastian/phpcpd": "*",
-        "squizlabs/php_codesniffer": "3.*",
-        "symfony/css-selector": "~2.8|~3.0",
-        "symfony/phpunit-bridge": "^3.4.3"
+        "squizlabs/php_codesniffer": "^3.3"
     },
     "config": {
         "secure-http": false,
@@ -45,6 +38,10 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/ossobuffo/drupal-console-extend-plugin.git"
         }
     ],
     "scripts": {
@@ -62,8 +59,8 @@
             }
         },
         "installer-types": [
-          "bower-asset",
-          "npm-asset"
+            "bower-asset",
+            "npm-asset"
         ],
         "installer-paths": {
             "html/core": [
@@ -112,14 +109,6 @@
                 }
             }
         }
-    },
-    "require": {
-        "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.6.7",
-        "oomphinc/composer-installers-extender": "^1.1",
-        "drupal/core-composer-scaffold": "*",
-        "drush/drush": "^9.0",
-        "drupalwxt/wxt": "3.0.15"
     },
     "autoload": {
         "classmap": [
