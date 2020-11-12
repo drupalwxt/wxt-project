@@ -13,13 +13,13 @@ Drupal WxT codebase for `<site-name>`.
 ## New Project (stable tag)
 
 ```sh
-composer create-project drupalwxt/wxt-project:3.0.15 site-name
+composer create-project drupalwxt/wxt-project:4.0.0 site-name
 ```
 
 ## New Project (dev)
 
 ```sh
-composer create-project drupalwxt/wxt-project:8.x-dev site-name
+composer create-project drupalwxt/wxt-project:9.x-dev site-name
 ```
 
 ## Containers (Optional)
