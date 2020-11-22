@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Export github reference var
-      run: echo "::set-env name=GITHUB_REFERENCE::$(echo ${GITHUB_REF#refs/tags/})"
+      run: echo "GITHUB_REFERENCE=$(echo ${GITHUB_REF#refs/tags/})" >> $GITHUB_ENV
 
     - name: Create Release
       id: create_release
