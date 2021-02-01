@@ -79,9 +79,9 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 
 <!-- Links Referenced -->
 
-[ci]:                       https://travis-ci.org/drupalwxt/site-wxt
-[ci-badge]:                 https://travis-ci.org/drupalwxt/site-wxt.svg?branch=8.x
+[ci]:                       https://github.com/drupalwxt/wxt/actions
+[ci-badge]:                 https://github.com/drupalwxt/wxt-project/workflows/tag/badge.svg
 [composer]:                 https://getcomposer.org
 [node]:                     https://nodejs.org
-[docker-scaffold-readme]:   https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/8.x/README.md
-[docker-readme]:            https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/8.x/template/docker/README.md
+[docker-scaffold-readme]:   https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/9.x/README.md
+[docker-readme]:            https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/9.x/template/docker/README.md
