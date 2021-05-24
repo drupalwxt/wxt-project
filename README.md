@@ -13,13 +13,14 @@ Drupal WxT codebase for `<site-name>`.
 ## New Project (stable tag)
 
 ```sh
-composer create-project drupalwxt/wxt-project:4.0.4 site-name
+# Not Yet Released
+composer create-project drupalwxt/wxt-project:4.1.0 site-name
 ```
 
 ## New Project (dev)
 
 ```sh
-composer create-project drupalwxt/wxt-project:9.x-dev site-name
+composer create-project drupalwxt/wxt-project:9.1.x-dev site-name
 ```
 
 ## Containers (Optional)
@@ -83,5 +84,5 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 [ci-badge]:                 https://github.com/drupalwxt/wxt-project/workflows/tag/badge.svg
 [composer]:                 https://getcomposer.org
 [node]:                     https://nodejs.org
-[docker-scaffold-readme]:   https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/9.x/README.md
-[docker-readme]:            https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/9.x/template/docker/README.md
+[docker-scaffold-readme]:   https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/9.1.x/README.md
+[docker-readme]:            https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/9.1.x/template/docker/README.md
