@@ -14,7 +14,7 @@ Drupal WxT codebase for `<site-name>`.
 
 ```sh
 # Not Yet Released
-composer create-project drupalwxt/wxt-project:4.1.0 site-name
+composer create-project drupalwxt/wxt-project:4.1.1 site-name
 ```
 
 ## New Project (dev)
