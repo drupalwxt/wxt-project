@@ -1,78 +1,52 @@
 Composer Project template for Drupal
 ====================================
 
-[![Build Status][ci-badge]][ci]
+[![Build Status][githubci-badge]][githubci]
 
-Drupal WxT codebase for `<site-name>`.
+An composer project template generator for the [Drupal WxT][wxt] distribution.
+
+> **Note**: You should consult the [README.md][wxt] file in the WxT repository for up-to-date information.
 
 ## Requirements
 
-* [Composer][composer]
-* [Node][node]
+- [Composer][composer]
+- [Node][node]
 
-## New Project (stable tag)
+## Dependencies
+
+The `composer.json` file calls the following dependencies:
+
+- [WxT][wxt]
+
+The [Drupal WxT][wxt] distribution is a web content management system which assists in building and maintaining innovative Web sites that are accessible, usable, and interoperable.
+
+This distribution is open source software and free for use by departments and external Web communities. This distribution integrates extensively with the WET-BOEW jQuery Framework for improved accessible markup.
+
+## Project
+
+You can see an example of a generated Composer Project Template over at:
+
+- [Site WxT][site-wxt]
+
+The following is the command that was used for initial generation:
 
 ```sh
-# Not Yet Released
-composer create-project drupalwxt/wxt-project:4.1.1 site-name
+composer create-project drupalwxt/site-wxt:4.2.x-dev site-wxt
 ```
 
-## New Project (dev)
-
-```sh
-composer create-project drupalwxt/wxt-project:9.1.x-dev site-name
-```
-
-## Containers (Optional)
-
-For the (optional) container based development workflow this is roughly the steps that are followed.
-
-> Note: The [docker-scaffold][docker-scaffold] has now been moved to its own repository. Should you wish to use the docker workflow you simply need to run the following command in the site-wxt repository's working directory.
-
-```sh
-# Git clone docker scaffold
-git clone https://github.com/drupalwxt/docker-scaffold.git docker
-
-# Create symlinks
-ln -s docker/docker-compose.yml docker-compose.yml
-ln -s docker/docker-compose-ci.yml docker-compose-ci.yml
-
-# Composer install
-export COMPOSER_MEMORY_LIMIT=-1 && composer install
-
-# Make our base docker image
-make build
-
-# Bring up the dev stack
-docker-compose -f docker-compose.yml up -d
-
-# Install Drupal
-make drupal_install
-
-# Development configuration
-./docker/bin/drush config-set system.performance js.preprocess 0 -y && \
-./docker/bin/drush config-set system.performance css.preprocess 0 -y && \
-./docker/bin/drush php-eval 'node_access_rebuild();' && \
-./docker/bin/drush config-set wxt_library.settings wxt.theme theme-gcweb -y && \
-./docker/bin/drush cr
-
-# Migrate default content
-./docker/bin/drush migrate:import --group wxt --tag 'Core' && \
-./docker/bin/drush migrate:import --group gcweb --tag 'Core' && \
-./docker/bin/drush migrate:import --group gcweb --tag 'Menu'
-```
+> **Note**: Normally you might want to use a stable tag such as `drupalwxt/site-wxt:4.2.x-dev`.
 
 ## Maintenance
 
 List of common commands are as follows:
 
-| Task                                            | Composer                                               |
-|-------------------------------------------------|--------------------------------------------------------|
-| Latest version of a contributed project         | ```composer require drupal/PROJECT_NAME:8.*```         |
-| Specific version of a contributed project       | ```composer require drupal/PROJECT_NAME:8.1.0-beta5``` |
-| Updating all projects including Drupal Core     | ```composer update```                                  |
-| Updating a single contributed project           | ```composer update drupal/PROJECT_NAME```              |
-| Updating Drupal Core exclusively                | ```composer update drupal/core```                      |
+| Task                                        | Composer                                         |
+| ------------------------------------------- | ------------------------------------------------ |
+| Latest version of a contributed project     | `composer require drupal/PROJECT_NAME:1.*`       |
+| Specific version of a contributed project   | `composer require drupal/PROJECT_NAME:1.0-beta5` |
+| Updating all projects including Drupal Core | `composer update`                                |
+| Updating a single contributed project       | `composer update drupal/PROJECT_NAME`            |
+| Updating Drupal Core exclusively            | `composer update drupal/core`                    |
 
 ## Acknowledgements
 
@@ -80,9 +54,11 @@ Extended with code and lessons learned by the [Acquia Team](https://acquia.com) 
 
 <!-- Links Referenced -->
 
-[ci]:                       https://github.com/drupalwxt/wxt/actions
-[ci-badge]:                 https://github.com/drupalwxt/wxt-project/workflows/tag/badge.svg
-[composer]:                 https://getcomposer.org
-[node]:                     https://nodejs.org
-[docker-scaffold-readme]:   https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/9.1.x/README.md
-[docker-readme]:            https://github.com/drupal-composer-ext/drupal-scaffold-docker/blob/9.1.x/template/docker/README.md
+[composer]:        https://getcomposer.org
+[docker-scaffold]: https://github.com/drupalwxt/docker-scaffold.git
+[githubci]:        https://github.com/drupalwxt/site-wxt/actions
+[githubci-badge]:  https://github.com/drupalwxt/site-wxt/workflows/build/badge.svg
+[node]:            https://nodejs.org
+[site-wxt]:        https://github.com/drupalwxt/site-wxt
+[wxt]:             https://github.com/drupalwxt/wxt
+[wxt-project]:     https://github.com/drupalwxt/wxt-project
