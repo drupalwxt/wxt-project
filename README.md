@@ -29,7 +29,7 @@ The following command is all you need to get started:
 composer create-project drupalwxt/wxt-project:4.3.4 <site-name>
 ```
 
-> **Note**: For development you may also specify a branch using `drupalwxt/wxt-project:4.2.x-dev`.
+> **Note**: For development you may also specify a branch using `drupalwxt/wxt-project:4.3.x-dev`.
 
 You can see a working example of a fully generated Composer Project Template over at:
 
