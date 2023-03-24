@@ -8,7 +8,7 @@
     "require": {
         "cweagans/composer-patches": "^1.6.0",
         "drupal/core-composer-scaffold": "^9",
-        "drupalwxt/wxt": "4.5.0",
+        "drupalwxt/wxt": "4.5.1",
         "drush/drush": ">=9.7",
         "oomphinc/composer-installers-extender": "^1.1 || ^2"
     },
