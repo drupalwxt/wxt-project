@@ -26,7 +26,7 @@ This distribution is open source software and free for use by departments and ex
 The following command is all you need to get started:
 
 ```sh
-composer create-project drupalwxt/wxt-project:4.5.3 <site-name>
+composer create-project drupalwxt/wxt-project:4.5.4 <site-name>
 ```
 
 > **Note**: For development you may also specify a branch using `drupalwxt/wxt-project:4.5.x-dev`.
@@ -38,7 +38,7 @@ You can see a working example of a fully generated Composer Project Template ove
 Where the following is the command that was used for the initial generation:
 
 ```sh
-composer create-project drupalwxt/wxt-project:4.5.3 site-wxt
+composer create-project drupalwxt/wxt-project:4.5.4 site-wxt
 ```
 
 > **Note**: Remember to keep the `composer.json` and `composer.lock` files that exist above `docroot` in source control as they are controlling your dependencies.
