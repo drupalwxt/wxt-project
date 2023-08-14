@@ -1,21 +1,22 @@
 {
     "name": "drupalwxt/site-wxt",
-    "description": "Project template for Drupal 9 sites built with the WxT distribution.",
+    "description": "Project template for Drupal 10 sites built with the WxT distribution.",
     "type": "project",
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "cweagans/composer-patches": "^1.6.0",
-        "drupal/core-composer-scaffold": "^9",
-        "drupalwxt/wxt": "4.5.4",
-        "drush/drush": ">=9.7",
-        "oomphinc/composer-installers-extender": "^1.1 || ^2"
+        "drupal/core-composer-scaffold": "^10.0",
+        "drupalwxt/wxt": "5.0.x-dev"
     },
     "require-dev": {
-        "drupal/core-dev": "^9",
-        "drupal/drupal-extension": "^4.1.0",
-        "squizlabs/php_codesniffer": "^3.3"
+        "drupal/core-dev": "^10.0",
+        "drupal/drupal-extension": "5.0.0-alpha1",
+        "drush/drush": ">=12.1.0",
+        "oomphinc/composer-installers-extender": "^1.1 || ^2",
+        "squizlabs/php_codesniffer": "3.*",
+        "phpspec/prophecy-phpunit": "^2"
     },
     "config": {
         "secure-http": false,
@@ -24,11 +25,13 @@
             "minConnections": 5
         },
         "allow-plugins": {
-            "drupal/core-composer-scaffold": true,
             "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
             "cweagans/composer-patches": true,
+            "drupal/console-extend-plugin": true,
+            "oomphinc/composer-installers-extender": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "oomphinc/composer-installers-extender": true
+            "phpstan/extension-installer": true
         }
     },
     "repositories": [
@@ -67,7 +70,7 @@
             "html/core": [
                 "type:drupal-core"
             ],
-            "html/libraries/{$name}" : [
+            "html/libraries/{$name}": [
                 "type:drupal-console-library",
                 "type:drupal-library",
                 "type:bower-asset",
@@ -92,24 +95,7 @@
             "drupal/core": "-p2"
         },
         "patches": { },
-        "patches-ignore": {
-            "acquia/lightning": {
-                "drupal/core": {
-                    "1356276 - Allow profiles to define a base/parent profile and load them in the correct order":
-                    "https://www.drupal.org/files/issues/2020-03-24/1356276-531-9.0.x-9.patch",
-                    "2914389 - Allow profiles to exclude dependencies of their parent":
-                    "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch"
-                }
-            },
-            "drupal/lightning_core": {
-                "drupal/core": {
-                    "1356276 - Allow profiles to define a base/parent profile and load them in the correct order":
-                    "https://www.drupal.org/files/issues/2020-03-24/1356276-531-9.0.x-9.patch",
-                    "2914389 - Allow profiles to exclude dependencies of their parent":
-                    "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch"
-                }
-            }
-        }
+        "patches-ignore": { }
     },
     "autoload": {
         "classmap": [
