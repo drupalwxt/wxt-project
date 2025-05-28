@@ -8,16 +8,19 @@
     "require": {
         "composer/installers": "^2.1",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "10.4.x",
-        "drupalwxt/wxt": "5.4.x-dev"
+        "drupal/core-composer-scaffold": "11.1.*",
+        "drupalwxt/wxt": "6.1.x-dev"
     },
     "require-dev": {
-        "drupal/core-dev": "10.4.x",
+        "drupal/core-dev": "11.1.*",
+        "drupal/drupal": "^11.1",
         "drupal/drupal-extension": "5.0.0-alpha1",
-        "drush/drush": "^12.4.3",
+        "drush/drush": "^13.3.3",
         "oomphinc/composer-installers-extender": "^1.1 || ^2",
+        "phpspec/prophecy-phpunit": "^2",
         "squizlabs/php_codesniffer": "3.*",
-        "phpspec/prophecy-phpunit": "^2"
+        "vlucas/phpdotenv": "^5.1",
+        "webflo/drupal-finder": "^1.2"
     },
     "config": {
         "discard-changes": true,
@@ -27,9 +30,12 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "drupal/core-vendor-hardening": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
         }
     },
     "repositories": [
@@ -44,12 +50,34 @@
         {
             "type": "composer",
             "url": "https://drupalwxt.github.io/composer-extdeps/"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fontawesome/fontawesome",
+                "version": "6.4.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "fontawesome"
+                },
+                "dist": {
+                    "url": "https://use.fontawesome.com/releases/v6.4.2/fontawesome-free-6.4.2-web.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "scripts": {
-        "post-root-package-install": [
-            "DrupalWxT\\WxT\\ScriptHandler::postCreateProject"
+        "post-install-cmd": [
+            "@copy-composer-directory"
         ],
+        "post-update-cmd": [
+            "@copy-composer-directory"
+        ],
+        "copy-composer-directory": [
+            "[ -d vendor/drupal/drupal/composer ] && mkdir -p html/composer && cp -R vendor/drupal/drupal/composer/* html/composer/ || echo 'composer directory not found; skipping copy'"
+        ],
+        "post-create-project-cmd": "rm -r -f behat.yml",
         "quick-start": [
             "composer install"
         ]

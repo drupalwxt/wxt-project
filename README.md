@@ -26,10 +26,10 @@ This distribution is open source software and free for use by departments and ex
 The following command is all you need to get started:
 
 ```sh
-composer create-project drupalwxt/wxt-project:5.4.2 <site-name>
+composer create-project drupalwxt/wxt-project:11.1.0 <site-name>
 ```
 
-> **Note**: For development you may also specify a branch using `drupalwxt/wxt-project:5.4.x-dev`.
+> **Note**: For development you may also specify a branch using `drupalwxt/wxt-project:11.1.x-dev`.
 
 You can see a working example of a fully generated Composer Project Template over at:
 
@@ -38,7 +38,7 @@ You can see a working example of a fully generated Composer Project Template ove
 Where the following is the command that was used for the initial generation:
 
 ```sh
-composer create-project drupalwxt/wxt-project:5.4.2 site-wxt
+composer create-project drupalwxt/wxt-project:11.1.0 site-wxt
 ```
 
 > **Note**: Remember to keep the `composer.json` and `composer.lock` files that exist above `docroot` in source control as they are controlling your dependencies.
@@ -87,7 +87,7 @@ Please **don't add `drupal/core` to your project's composer.json** since WxT man
 
 WxT's minor versions will always correspond to Drupal Core's. For example, `drupalwxt/wxt:~4.2.0` will require Drupal Core 9.2.x and `drupalwxt/wxt:~4.1.0` will require Drupal Core 9.1.x.
 
-When you need to update Drupal Core as an example from 9.1.x to 9.2.x, all you would do is change your requirement for `drupalwxt/wxt` in your `composer.json` file:
+When you need to update Drupal Core as an example from 10.4.x to 11.1.x, all you would do is change your requirement for `drupalwxt/wxt` in your `composer.json` file:
 
 ```
 composer require --no-update drupalwxt/wxt:~4.2.0
